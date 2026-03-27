@@ -19,8 +19,8 @@ func main() {
 	)
 
 	flag.StringVar(&url, "url", "http://localhost:8081/api/v1/cpu", "target URL")
-	flag.IntVar(&concurrency, "c", 5, "number of concurrent requests") // 20 → 5
-	flag.IntVar(&duration, "d", 30, "duration in seconds")             // 120 → 30
+	flag.IntVar(&concurrency, "c", 5, "number of concurrent requests")
+	flag.IntVar(&duration, "d", 30, "duration in seconds")
 	flag.StringVar(&method, "method", "GET", "HTTP method")
 	flag.Parse()
 
@@ -38,7 +38,6 @@ func main() {
 	fmt.Printf("Concurrency: %d\n", concurrency)
 	fmt.Printf("Duration: %d seconds\n", duration)
 
-	// Запускаем горутины
 	for i := 0; i < concurrency; i++ {
 		wg.Add(1)
 		go func(id int) {

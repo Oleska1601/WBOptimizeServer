@@ -49,7 +49,6 @@ func (v2 *APIV2) cpuBound(c *gin.Context) {
 		Dur("duration", duration).
 		Msg("fibonacci v1 calculated")
 
-	// Возвращаем результат
 	c.JSON(http.StatusOK, gin.H{
 		"n":           n,
 		"result":      result,

@@ -18,7 +18,6 @@ func BenchmarkFibonacci(b *testing.B) {
 func BenchmarkProcessJSON(b *testing.B) {
 	s := New()
 
-	// Подготовка тестовых данных (указатель!)
 	item := &models.ItemV2{
 		SKU:    "PROD-001",
 		Price:  99.99,

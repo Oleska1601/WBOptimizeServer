@@ -6,7 +6,6 @@ import (
 	"github.com/Oleska1601/WBOptimizeServer/internal/models"
 )
 
-// CPU-bound бенчмарки
 func BenchmarkFibonacci(b *testing.B) {
 	s := New()
 	n := 30
@@ -17,11 +16,9 @@ func BenchmarkFibonacci(b *testing.B) {
 	}
 }
 
-// Memory-bound бенчмарки
 func BenchmarkProcessJSON(b *testing.B) {
 	s := New()
 
-	// Подготовка тестовых данных
 	item := models.ItemV1{
 		SKU:    "PROD-001",
 		Price:  99.99,
