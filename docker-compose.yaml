@@ -1,0 +1,19 @@
+services:
+  optimizer:
+      container_name: optimizer
+      image: optimizer
+      env_file:
+        .env
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - "8081:8081"
+        - "8082:8082"
+      restart: unless-stopped     
+      networks:
+        - optimizer_network
+
+networks:
+  optimizer_network:
+    driver: bridge 
